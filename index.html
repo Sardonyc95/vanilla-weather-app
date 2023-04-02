@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla weather app</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,7 +18,9 @@
       src="https://kit.fontawesome.com/39da60880e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
+    <title>Vanilla weather app</title>
   </head>
   <body>
     <div class="container">
@@ -47,23 +48,33 @@
                   </form>
                 </div>
                 <div class="locationInfo">
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="text">
-                        <h1>Nigeria</h1>
-                        <p>Portharcourt</p>
-                      </div>
+                  <div class="row weather-details">
+                    <div class="col-6 text">
+                      <h1 id="country"></h1>
+                      <p class="location">Location: <span id="city"></span></p>
+                      <p class="date">
+                        Last updated:
+                        <span id="formatDate"></span>
+                      </p>
+                    </div>
+                    <div class="col-6 icons">
+                      <img src="" alt="" id="weatherIcon" />
                     </div>
                   </div>
 
                   <div class="weatherText">
                     <div class="row">
-                      <div class="col-6 temperature">
-                        <span class="degree">31</span><a href="#">°C</a>
+                      <div class="col temperature">
+                        <span class="degree" id="tempDegree">31</span>
+                        <a href="#">°C</a>
                         <span class="line">|</span>
                         <a href="#">°F</a>
+                        <br />
+                        <span
+                          id="description"
+                          class="weather-description"
+                        ></span>
                       </div>
-                      <div class="col-6 sunny">☀️</div>
                     </div>
                   </div>
                 </div>
@@ -137,7 +148,9 @@
                       <p>
                         <i class="fa-solid fa-temperature-half"></i> Real Feel
                         <br />
-                        <strong class="weatherInfo">30°</strong>
+                        <strong class="weatherInfo">
+                          <span id="feelLike"></span>°</strong
+                        >
                       </p>
                     </div>
                     <div class="col-6">
@@ -151,14 +164,18 @@
                       <p>
                         <i class="fa-solid fa-droplet"> </i> Humidity
                         <br />
-                        <strong class="weatherInfo">15%</strong>
+                        <strong class="weatherInfo">
+                          <span id="humidityPercentage"></span>%</strong
+                        >
                       </p>
                     </div>
                     <div class="col-6">
                       <p>
                         <i class="fa-solid fa-wind"> </i> Wind
                         <br />
-                        <strong class="weatherInfo">13km/h</strong>
+                        <strong class="weatherInfo">
+                          <spa id="windSpeed"></spa>km/h</strong
+                        >
                       </p>
                     </div>
                   </div>
