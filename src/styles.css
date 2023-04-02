@@ -128,16 +128,18 @@ button {
 .weatherText .degree {
   font-size: 45px;
 }
-.temperature a {
-  position: relative;
-  top: -20px;
-  font-size: 25px;
-  left: -10px;
-}
 .temperature .line {
   position: relative;
   top: -20px;
-  font-size: 25px;
+  font-size: 20px;
+  left: -10px;
+}
+.temperature .line a {
+  font-size: 20px;
+}
+.temperature .active {
+  color: rgb(33, 37, 41);
+  cursor: default;
 }
 .weatherText .weather-description {
   margin-top: 2px;

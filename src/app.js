@@ -36,10 +36,12 @@ function displayTemperature(response) {
   let humidity = document.querySelector("#humidityPercentage");
   let wind = document.querySelector("#windSpeed");
 
+  temperatureValue = response.data.main.temp;
+
   country.innerHTML = response.data.sys.country;
   city.innerHTML = response.data.name;
   todayDate.innerHTML = formateDate(response.data.dt * 1000);
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  temperature.innerHTML = Math.round(temperatureValue);
   weatherDescription.innerHTML = response.data.weather[0].description;
   let icons = response.data.weather[0].icon;
   iconElement.setAttribute(
@@ -75,15 +77,31 @@ function inputSubmit(event) {
 function showFahrenheitConversion(event) {
   event.preventDefault();
 
-  // let celsiusTemperature = document.querySelector("celsiusLink");
-  let fahrenheitTemperature = document.querySelector("tempDegree");
-  fahrenheitTemperature.innerHTML = (30 * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = document.querySelector("fahrenheit-link");
+  let temperatureElement = document.querySelector("#tempDegree");
+  fahrenheitTemperature = (temperatureValue * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusConversion(event) {
+  event.preventDefault();
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#tempDegree");
+  temperatureElement.innerHTML = Math.round(temperatureValue);
 }
 
 let form = document.querySelector("#submit");
 form.addEventListener("submit", inputSubmit);
 
-let fahrenheit = document.querySelector("#fahrenheitLink");
-fahrenheit.addEventListener("click", showFahrenheitConversion);
+let temperatureValue = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitConversion);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusConversion);
 
 searchCity("Owerri");
