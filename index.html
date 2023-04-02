@@ -31,18 +31,19 @@
             <div class="card">
               <div class="card-body">
                 <div class="search">
-                  <form action="/submit" class="formBtn">
+                  <form class="formBtn" id="submit">
                     <input
                       type="text"
                       placeholder="Type a city..."
                       autocomplete="off"
                       autofocus="on"
                       class="inputform"
+                      id="searchBtn"
                     />
                     <input
                       type="submit"
                       value="Search"
-                      id="submit-btn"
+                      id="submitBtn"
                       class="inputsubmit"
                     />
                   </form>
@@ -53,8 +54,7 @@
                       <h1 id="country"></h1>
                       <p class="location">Location: <span id="city"></span></p>
                       <p class="date">
-                        Last updated:
-                        <span id="formatDate"></span>
+                        Last updated:<span id="formatDate"></span>
                       </p>
                     </div>
                     <div class="col-6 icons">
@@ -66,9 +66,9 @@
                     <div class="row">
                       <div class="col temperature">
                         <span class="degree" id="tempDegree">31</span>
-                        <a href="#">°C</a>
+                        <a href="#" id="celsiusLink">°C</a>
                         <span class="line">|</span>
-                        <a href="#">°F</a>
+                        <a href="#" id="fahrenheitLink">°F</a>
                         <br />
                         <span
                           id="description"
