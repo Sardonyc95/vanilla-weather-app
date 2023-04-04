@@ -23,27 +23,64 @@ function formateDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function showWeatherForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
+}
+
+function showWeatherForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
+
   let forecastHTML = `<h6>Weather Forecast</h6>
-  <div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    `
-                  <div class="col-3">Today</div>
-                  <div class="col-3">
-                    <span>☀️</span>
-                    <span>Sunny</span>
+  <div class="row wrapper-forecast">`;
+  let dailyForecast = response.data.daily;
+  dailyForecast.forEach(function (dailyForecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+                  <div class="col-2">${formatDay(dailyForecastDay.dt)}</div>
+                  <div class="col-5">
+                    <img
+                src="https://openweathermap.org/img/wn/${
+                  dailyForecastDay.weather[0].icon
+                }@2x.png"
+                alt=""
+                width="42"
+                  />
+                    <span class="forecast-description">${
+                      dailyForecastDay.weather[0].description
+                    }</span>
                   </div>
                   <div class="col-3">
-                    <span>21°</span>
-                    <span>17°</span>
+                    <span class="max-temperature">${Math.round(
+                      dailyForecastDay.temp.max
+                    )}°</span>
+                    <span class="min-temperature">${Math.round(
+                      dailyForecastDay.temp.max
+                    )}°</span>
                   </div>
-                  <div class="col-3">04/04</div>
+                  <div class="col-2">04/04</div>
+                  <hr />
                 `;
+    }
+  });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getCordinates(coordinates) {
+  let apikey = "caa883a4a60d93878755b08a933f74ea";
+  let unit = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apikey}&units=${unit}`;
+  console.log(apiUrl);
+
+  axios.get(apiUrl).then(showWeatherForecast);
 }
 
 function displayTemperature(response) {
@@ -79,6 +116,9 @@ function displayTemperature(response) {
   feel.innerHTML = Math.round(response.data.main.feels_like);
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
+
+  console.log(response.data.coord);
+  getCordinates(response.data.coord);
 }
 
 function searchCity(value) {
@@ -128,4 +168,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusConversion);
 
 searchCity("Owerri");
-showWeatherForecast();

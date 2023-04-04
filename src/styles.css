@@ -244,6 +244,21 @@ button {
   background: darkslategray;
   color: #fff;
 }
+.forecast-description {
+  font-size: 15px;
+  color: #aeb0b1;
+}
+.wrapper-forecast {
+  padding-left: 15px;
+  row-gap: 1.4rem;
+}
+.max-temperature,
+.min-temperature {
+  font-size: 16px;
+}
+.min-temperature {
+  opacity: 0.6;
+}
 .coderInfo {
   font-size: 15px;
   margin-top: 2px;
