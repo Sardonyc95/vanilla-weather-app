@@ -26,28 +26,49 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="row">
-          <div class="col-1"></div>
-          <div class="col-7">
-            <div class="card">
+          <div class="col-1 first-column">
+            <div class="card d-md-none d-lg-block weather-icons-wrapper">
+              <div class="card-body weather-icons-body">
+                <ul>
+                  <li>
+                    <i class="fa-solid fa-wind icon-wind-wrapper"></i>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-cloud-moon-rain"></i>
+                    <!-- <small>weather</small> -->
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-braille"></i>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-envelope-circle-check"></i>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-sliders"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-7 second-column">
+            <div class="card weather-temperature-wrapper">
               <div class="card-body">
-                <div class="search">
-                  <form class="formBtn" id="submit">
-                    <input
-                      type="text"
-                      placeholder="Type a city..."
-                      autocomplete="off"
-                      autofocus="on"
-                      class="inputform"
-                      id="searchBtn"
-                    />
-                    <input
-                      type="submit"
-                      value="Search"
-                      id="submitBtn"
-                      class="inputsubmit"
-                    />
-                  </form>
-                </div>
+                <form class="search" id="submit">
+                  <input
+                    type="text"
+                    placeholder="Type a city..."
+                    autocomplete="off"
+                    autofocus="on"
+                    class="inputform"
+                    id="searchBtn"
+                  />
+                  <input
+                    type="submit"
+                    value="Search"
+                    id="submitBtn"
+                    class="inputsubmit"
+                  />
+                </form>
                 <div class="locationInfo">
                   <div class="row weather-details">
                     <div class="col-6 text">
@@ -81,7 +102,7 @@
                   </div>
                 </div>
                 <div class="diff-temperature">
-                  <h6>Temperature</h6>
+                  <h6>Temperature Forecast</h6>
                   <div class="temperate">
                     <div class="temp1">
                       <ul class="temp">
@@ -185,7 +206,27 @@
               </div>
             </div>
           </div>
-          <div class="col-4"></div>
+          <div class="col-4 third-column">
+            <div class="card weather-forecast-wrapper">
+              <div class="card-body" id="forecast">
+                <!-- <div class="weather-forecast-text">
+                  <h6>Weather Forecast</h6>
+                </div> -->
+                <!-- <div class="row">
+                  <div class="col-3">Today</div>
+                  <div class="col-3">
+                    <span>☀️</span>
+                    <span>Sunny</span>
+                  </div>
+                  <div class="col-3">
+                    <span>21°</span>
+                    <span>17°</span>
+                  </div>
+                  <div class="col-3">04/04</div>
+                </div> -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <p class="coderInfo">

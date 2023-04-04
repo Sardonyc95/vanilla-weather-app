@@ -23,6 +23,29 @@ function formateDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function showWeatherForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<h6>Weather Forecast</h6>
+  <div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
+                  <div class="col-3">Today</div>
+                  <div class="col-3">
+                    <span>☀️</span>
+                    <span>Sunny</span>
+                  </div>
+                  <div class="col-3">
+                    <span>21°</span>
+                    <span>17°</span>
+                  </div>
+                  <div class="col-3">04/04</div>
+                `;
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   console.log(response);
 
@@ -105,3 +128,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusConversion);
 
 searchCity("Owerri");
+showWeatherForecast();
