@@ -1,5 +1,6 @@
 body {
   font-family: monospace;
+  background: #fff;
 }
 
 h1 {
@@ -49,12 +50,16 @@ button {
   margin: 0 auto;
 }
 .weather-app-wrapper {
-  margin: 0 auto;
+  margin: 50px auto;
   width: 100%;
+  background: url("https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=");
+  border: 1px solid #eaf4fa;
+  border-radius: 25px;
 }
 .first-column {
-  width: fit-content;
-  margin: 50px 0 0 0;
+  width: inherit;
+  margin: 20px 0;
+  margin-left: 25px;
 }
 .weather-icons-wrapper {
   height: 100%;
@@ -62,11 +67,12 @@ button {
   padding: 2px;
   border: 1px solid #bbe4e9;
   border-radius: 20px;
-  background: darkslategray;
+  background: #fff;
+  color: #000000;
 }
 .icon-wind-wrapper {
   background: #d5e4e6;
-  color: #08c9e2;
+  color: #d98a25;
   border: none transparent;
   border-radius: 5px;
   padding: 5px;
@@ -76,7 +82,7 @@ button {
 .fa-braille,
 .fa-envelope-circle-check,
 .fa-sliders {
-  color: #dad6d6;
+  color: #d98a25;
   padding: 5px;
   margin-bottom: 15px;
 }
@@ -84,7 +90,7 @@ button {
   color: #fff;
 }
 .second-column {
-  margin: 50px 0 0 0;
+  margin: 20px 0;
   width: inherit;
 }
 .weather-temperature-wrapper {
@@ -92,6 +98,7 @@ button {
   margin: 0;
   border: none transparent;
   outline: none;
+  background: none;
 }
 .card-body {
   padding: 10px;
@@ -100,10 +107,10 @@ button {
 .search {
   width: 100%;
   display: flex;
-  border: 1px solid #16def8;
+  border: 1px solid #bbe4eb;
   border-radius: 20px;
   padding: 5px;
-  background: #bbe4eb;
+  background: #fff;
 }
 .inputform {
   width: 100%;
@@ -117,7 +124,7 @@ button {
   border: none transparent;
   outline: none;
   color: #fff;
-  background: darkslategray;
+  background: #bbe4eb;
   padding: 7px;
   margin: 0;
   border-radius: 30px;
@@ -178,9 +185,9 @@ button {
 .diff-temperature {
   width: 100%;
   padding-left: 5px;
-  border: 1px solid darkslategray;
+  border: 1px solid #bbe4eb;
   border-radius: 20px;
-  background: #bbe4eb;
+  background: #fff;
   color: #000000;
 }
 .temperate {
@@ -205,7 +212,7 @@ button {
   margin-top: 7px;
   border: 1px solid lightslategrey;
   border-radius: 20px;
-  background: darkslategray;
+  background: url("https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=");
   color: #fff;
 }
 .weather-condition .check {
@@ -225,7 +232,7 @@ button {
   margin: 0 35px;
 }
 .third-column {
-  margin: 50px 0 0 0;
+  margin: 20px 0;
 }
 .weather-forecast-wrapper {
   width: 500px;
@@ -234,8 +241,8 @@ button {
   padding: 2px;
   border: 1px solid #bbe4e9;
   border-radius: 20px;
-  background: darkslategray;
-  color: #fff;
+  background: #fff;
+  color: #000000;
 }
 .forecast-description {
   font-size: 15px;
