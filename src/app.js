@@ -31,17 +31,44 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+function showDayFormat(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let month = date.getMonth();
+
+  return `${day}/${month}`;
+}
+
+function formatTime(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+
+  // return `${hour}:${minute}`;
+  if (hour < 12) {
+    return `${hour}:${minute} AM`;
+  } else {
+    return `${hour}:${minute} PM`;
+  }
+}
+
 function showWeatherForecast(response) {
   console.log(response.data);
-  let forecastElement = document.querySelector("#forecast");
+  let dailyForecastElement = document.querySelector("#forecast");
+  let hourlyForecastElement = document.querySelector("#temperatureForecast");
 
-  let forecastHTML = `<h6>Weather Forecast</h6>
+  let dailyForecastHTML = `<h6>Weather Forecast</h6>
   <div class="row wrapper-forecast">`;
+  let hourlyForecastHTML = `<h6>Temperature Forecast</h6>
+  <div class="temperate">`;
+
   let dailyForecast = response.data.daily;
+  let hourlyForecast = response.data.hourly;
+
   dailyForecast.forEach(function (dailyForecastDay, index) {
     if (index < 6) {
-      forecastHTML =
-        forecastHTML +
+      dailyForecastHTML =
+        dailyForecastHTML +
         `
                   <div class="col-2">${formatDay(dailyForecastDay.dt)}</div>
                   <div class="col-5">
@@ -64,14 +91,40 @@ function showWeatherForecast(response) {
                       dailyForecastDay.temp.max
                     )}°</span>
                   </div>
-                  <div class="col-2">04/04</div>
+                  <div class="col-2">${showDayFormat(dailyForecastDay.dt)}</div>
                   <hr />
                 `;
     }
   });
 
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  dailyForecastHTML = dailyForecastHTML + `</div>`;
+  dailyForecastElement.innerHTML = dailyForecastHTML;
+
+  hourlyForecast.forEach(function (hourlyForecastTime, index) {
+    if (index < 6) {
+      hourlyForecastHTML =
+        hourlyForecastHTML +
+        `
+                    <div class="temp1">
+                      <ul class="temp">
+                        <li>${formatTime(hourlyForecastTime.dt)}</li>
+                        <li><img
+                src="https://openweathermap.org/img/wn/${
+                  hourlyForecastTime.weather[0].icon
+                }@2x.png"
+                alt=""
+                width="42"
+                  /></li>
+                        <li>${Math.round(hourlyForecastTime.temp)}°</li>
+                      </ul>
+                      <span class="line1">|</span>
+                    </div>
+                  `;
+    }
+  });
+
+  hourlyForecastHTML = hourlyForecastHTML + `</div>`;
+  hourlyForecastElement.innerHTML = hourlyForecastHTML;
 }
 
 function getCordinates(coordinates) {
