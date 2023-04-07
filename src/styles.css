@@ -75,7 +75,7 @@ button:hover {
 }
 .icon-wind-wrapper {
   background: #d5e4e6;
-  color: #aeb0b1;
+  color: #d98a25;
   border: none transparent;
   border-radius: 5px;
   padding: 5px;
@@ -85,8 +85,7 @@ button:hover {
 .fa-braille,
 .fa-envelope-circle-check,
 .fa-sliders {
-  color: #aeb0b1;
-  opacity: 0.6;
+  color: #d98a25;
   padding: 5px;
   margin-bottom: 15px;
 }
@@ -268,6 +267,7 @@ button:hover {
 .coderInfo {
   font-size: 15px;
   margin-top: 2px;
+  margin-left: 70px;
 }
 .link1 {
   position: static;
