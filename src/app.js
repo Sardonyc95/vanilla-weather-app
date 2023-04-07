@@ -70,32 +70,28 @@ function showWeatherForecast(response) {
       dailyForecastHTML =
         dailyForecastHTML +
         `
-                  <div class="col-2">
-                    <span>${formatDay(dailyForecastDay.dt)}</span>
-                    <br />
-                    <span>${showDayFormat(dailyForecastDay.dt)}</span>
+                  <div class="col-2">${formatDay(dailyForecastDay.dt)}</div>
+                  <div class="col-5">
+                    <img
+                src="https://openweathermap.org/img/wn/${
+                  dailyForecastDay.weather[0].icon
+                }@2x.png"
+                alt=""
+                width="42"
+                  />
+                    <span class="forecast-description">${
+                      dailyForecastDay.weather[0].description
+                    }</span>
                   </div>
                   <div class="col-3">
-                    <img
-                      src="https://openweathermap.org/img/wn/${
-                        dailyForecastDay.weather[0].icon
-                      }@2x.png"
-                      alt=""
-                      width="42"
-                    />
-                    <br />
-                    <span class="forecast-description"
-                      >${dailyForecastDay.weather[0].description}</span
-                    >
+                    <span class="max-temperature">${Math.round(
+                      dailyForecastDay.temp.max
+                    )}°</span>
+                    <span class="min-temperature">${Math.round(
+                      dailyForecastDay.temp.max
+                    )}°</span>
                   </div>
-                  <div class="col-2">
-                    <span class="max-temperature"
-                      >${Math.round(dailyForecastDay.temp.max)}°</span
-                    >
-                    <span class="min-temperature"
-                      >${Math.round(dailyForecastDay.temp.max)}°</span
-                    >
-                  </div>
+                  <div class="col-2">${showDayFormat(dailyForecastDay.dt)}</div>
                   <hr />
                 `;
     }
