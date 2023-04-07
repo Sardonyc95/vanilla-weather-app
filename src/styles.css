@@ -45,12 +45,15 @@ button {
   background: #bbe4eb;
   color: #fff;
 }
+button:hover {
+  background: #d98a25;
+}
 
 .container {
   margin: 0 auto;
 }
 .weather-app-wrapper {
-  margin: 50px auto;
+  margin: 50px auto 10px;
   width: 100%;
   background: url("https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=");
   border: 1px solid #eaf4fa;
@@ -67,12 +70,12 @@ button {
   padding: 2px;
   border: 1px solid #bbe4e9;
   border-radius: 20px;
-  background: #fff;
+  background: #0d0a33;
   color: #000000;
 }
 .icon-wind-wrapper {
   background: #d5e4e6;
-  color: #d98a25;
+  color: #aeb0b1;
   border: none transparent;
   border-radius: 5px;
   padding: 5px;
@@ -82,7 +85,8 @@ button {
 .fa-braille,
 .fa-envelope-circle-check,
 .fa-sliders {
-  color: #d98a25;
+  color: #aeb0b1;
+  opacity: 0.6;
   padding: 5px;
   margin-bottom: 15px;
 }
@@ -97,6 +101,7 @@ button {
   max-width: 100%;
   margin: 0;
   border: none transparent;
+  border-radius: 20px;
   outline: none;
   background: none;
 }
@@ -124,7 +129,7 @@ button {
   border: none transparent;
   outline: none;
   color: #fff;
-  background: #bbe4eb;
+  background: #0d0a33;
   padding: 7px;
   margin: 0;
   border-radius: 30px;
@@ -133,6 +138,7 @@ button {
   max-width: 100%;
   padding: 5px;
   height: 300px;
+  color: #000000;
 }
 .location,
 .date {
@@ -171,7 +177,7 @@ button {
   font-size: 20px;
 }
 .temperature .active {
-  color: rgb(33, 37, 41);
+  color: #000000;
   cursor: default;
 }
 .weatherText .weather-description {
@@ -212,7 +218,7 @@ button {
   margin-top: 7px;
   border: 1px solid lightslategrey;
   border-radius: 20px;
-  background: url("https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=");
+  background: #0d0a33;
   color: #fff;
 }
 .weather-condition .check {
@@ -241,8 +247,8 @@ button {
   padding: 2px;
   border: 1px solid #bbe4e9;
   border-radius: 20px;
-  background: #fff;
-  color: #000000;
+  background: #0d0a33;
+  color: #fff;
 }
 .forecast-description {
   font-size: 15px;
@@ -262,7 +268,6 @@ button {
 .coderInfo {
   font-size: 15px;
   margin-top: 2px;
-  margin-left: 70px;
 }
 .link1 {
   position: static;
