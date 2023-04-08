@@ -58,6 +58,7 @@ button:hover {
   background: url("https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=");
   border: 1px solid #eaf4fa;
   border-radius: 25px;
+  flex-wrap: nowrap;
 }
 .first-column {
   width: inherit;
@@ -238,16 +239,25 @@ button:hover {
 }
 .third-column {
   margin: 20px 0;
+  width: inherit;
 }
 .weather-forecast-wrapper {
   width: 500px;
   height: 100%;
-  margin: 0;
+  margin: 0 5px;
   padding: 2px;
   border: 1px solid #bbe4e9;
   border-radius: 20px;
   background: #0d0a33;
   color: #fff;
+}
+.wrapper-forecast-features {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 15px;
+}
+.forecast-img-icon {
+  width: 200px;
 }
 .forecast-description {
   font-size: 15px;
@@ -255,7 +265,7 @@ button:hover {
 }
 .wrapper-forecast {
   padding-left: 15px;
-  row-gap: 1.4rem;
+  gap: 15rem;
 }
 .max-temperature,
 .min-temperature {

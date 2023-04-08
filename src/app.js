@@ -44,7 +44,6 @@ function formatTime(timestamp) {
   let hour = date.getHours();
   let minute = date.getMinutes();
 
-  // return `${hour}:${minute}`;
   if (hour < 12) {
     return `${hour}:${minute} AM`;
   } else {
@@ -53,12 +52,11 @@ function formatTime(timestamp) {
 }
 
 function showWeatherForecast(response) {
-  console.log(response.data);
   let dailyForecastElement = document.querySelector("#forecast");
   let hourlyForecastElement = document.querySelector("#temperatureForecast");
 
   let dailyForecastHTML = `<h6>Weather Forecast</h6>
-  <div class="row wrapper-forecast">`;
+  <div class="wrapper-forecast">`;
   let hourlyForecastHTML = `<h6>Temperature Forecast</h6>
   <div class="temperate">`;
 
@@ -66,32 +64,38 @@ function showWeatherForecast(response) {
   let hourlyForecast = response.data.hourly;
 
   dailyForecast.forEach(function (dailyForecastDay, index) {
-    if (index < 6) {
+    if (index < 7) {
       dailyForecastHTML =
         dailyForecastHTML +
         `
-                  <div class="col-2">${formatDay(dailyForecastDay.dt)}</div>
-                  <div class="col-5">
-                    <img
-                src="https://openweathermap.org/img/wn/${
-                  dailyForecastDay.weather[0].icon
-                }@2x.png"
-                alt=""
-                width="42"
-                  />
-                    <span class="forecast-description">${
-                      dailyForecastDay.weather[0].description
-                    }</span>
+                  <div class="wrapper-forecast-features">
+                    <div class="current-time">
+                      ${formatDay(dailyForecastDay.dt)}
+                    </div>
+                    <div class="forecast-img-icon">
+                      <img
+                        src="https://openweathermap.org/img/wn/${
+                          dailyForecastDay.weather[0].icon
+                        }@2x.png"
+                        alt=""
+                        width="42"
+                      />
+                      <span class="forecast-description"
+                        >${dailyForecastDay.weather[0].description}</span
+                      >
+                    </div>
+                    <div class="min-max-temperature">
+                      <span class="max-temperature"
+                        >${Math.round(dailyForecastDay.temp.max)}°</span
+                      >
+                      <span class="min-temperature"
+                        >${Math.round(dailyForecastDay.temp.max)}°</span
+                      >
+                    </div>
+                    <div>
+                      <span>${showDayFormat(dailyForecastDay.dt)}</span>
+                    </div>
                   </div>
-                  <div class="col-3">
-                    <span class="max-temperature">${Math.round(
-                      dailyForecastDay.temp.max
-                    )}°</span>
-                    <span class="min-temperature">${Math.round(
-                      dailyForecastDay.temp.max
-                    )}°</span>
-                  </div>
-                  <div class="col-2">${showDayFormat(dailyForecastDay.dt)}</div>
                   <hr />
                 `;
     }
@@ -131,14 +135,11 @@ function getCordinates(coordinates) {
   let apikey = "caa883a4a60d93878755b08a933f74ea";
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apikey}&units=${unit}`;
-  console.log(apiUrl);
 
   axios.get(apiUrl).then(showWeatherForecast);
 }
 
 function displayTemperature(response) {
-  console.log(response);
-
   let country = document.querySelector("#country");
   let city = document.querySelector("#city");
   let todayDate = document.querySelector("#formatDate");
@@ -170,7 +171,6 @@ function displayTemperature(response) {
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
 
-  console.log(response.data.coord);
   getCordinates(response.data.coord);
 }
 
