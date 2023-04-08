@@ -58,7 +58,6 @@ button:hover {
   background: url("https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=");
   border: 1px solid #eaf4fa;
   border-radius: 25px;
-  /* flex-wrap: nowrap; */
 }
 .first-column {
   width: inherit;
@@ -66,7 +65,7 @@ button:hover {
   margin-left: 25px;
 }
 .weather-icons-wrapper {
-  height: 100%;
+  height: 98%;
   margin: 0;
   padding: 2px;
   border: 1px solid #bbe4e9;
@@ -98,7 +97,6 @@ button:hover {
   width: inherit;
 }
 .weather-temperature-wrapper {
-  /* max-width: 100%; */
   margin: 0;
   border: none transparent;
   border-radius: 20px;
@@ -110,7 +108,6 @@ button:hover {
   margin-bottom: 0;
 }
 .search {
-  /* width: 100%; */
   display: flex;
   border: 1px solid #bbe4eb;
   border-radius: 20px;
@@ -135,7 +132,6 @@ button:hover {
   border-radius: 30px;
 }
 .locationInfo {
-  /* max-width: 100%; */
   padding: 5px;
   height: 300px;
   color: #000000;
@@ -189,7 +185,6 @@ button:hover {
   text-transform: uppercase;
 }
 .diff-temperature {
-  /* width: 100%; */
   padding-left: 5px;
   padding-bottom: 15px;
   border: 1px solid #bbe4eb;
@@ -214,7 +209,6 @@ button:hover {
   font-size: 45px;
 }
 .weather-condition {
-  /* width: 100%; */
   padding-left: 5px;
   margin-top: 7px;
   border: 1px solid lightslategrey;
@@ -243,8 +237,6 @@ button:hover {
   max-width: 100%;
 }
 .weather-forecast-wrapper {
-  /* width: 500px; */
-  height: 100%;
   margin: 0 5px;
   padding: 2px 15px;
   border: 1px solid #bbe4e9;
@@ -254,8 +246,11 @@ button:hover {
 }
 .wrapper-forecast-features {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   font-size: 15px;
+}
+.text {
+  margin-bottom: 25px;
 }
 .forecast-img-icon {
   width: 200px;
@@ -278,7 +273,7 @@ button:hover {
 .coderInfo {
   font-size: 15px;
   margin-top: 2px;
-  margin-left: 70px;
+  margin-left: 20px;
 }
 .link1 {
   position: static;

@@ -52,10 +52,12 @@ function formatTime(timestamp) {
 }
 
 function showWeatherForecast(response) {
+  console.log(response);
+
   let dailyForecastElement = document.querySelector("#forecast");
   let hourlyForecastElement = document.querySelector("#temperatureForecast");
 
-  let dailyForecastHTML = `<h6>Weather Forecast</h6>
+  let dailyForecastHTML = `<h6 class="text">Weather Forecast</h6>
   <div class="wrapper-forecast">`;
   let hourlyForecastHTML = `<h6>Temperature Forecast</h6>
   <div class="temperate">`;
@@ -140,6 +142,8 @@ function getCordinates(coordinates) {
 }
 
 function displayTemperature(response) {
+  console.log(response);
+
   let country = document.querySelector("#country");
   let city = document.querySelector("#city");
   let todayDate = document.querySelector("#formatDate");
