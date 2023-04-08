@@ -58,7 +58,7 @@ button:hover {
   background: url("https://media.istockphoto.com/id/531889697/photo/weather-forecast-concept.jpg?s=612x612&w=0&k=20&c=FsYyo1HrL9WCpYt4RUzV39qIqEpz6ylTXxVxlh95lR8=");
   border: 1px solid #eaf4fa;
   border-radius: 25px;
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
 }
 .first-column {
   width: inherit;
