@@ -240,7 +240,7 @@ button:hover {
 }
 .third-column {
   margin: 20px 0;
-  width: inherit;
+  max-width: 32%;
 }
 .weather-forecast-wrapper {
   /* width: 500px; */
