@@ -63,6 +63,7 @@ button:hover {
   width: inherit;
   margin: 20px 0;
   margin-left: 25px;
+  padding-right: 0;
 }
 .weather-icons-wrapper {
   height: 100%;
@@ -235,6 +236,7 @@ button:hover {
 .third-column {
   margin: 20px 0;
   max-width: 100%;
+  padding-left: 0;
 }
 .weather-forecast-wrapper {
   margin: 0 5px;
